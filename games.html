@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Game Kami — Amamori Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="brand">
+
+        <div class="brand-logo">
+            <img src="assets/images/game-logo.png" alt="Logo Amamori Studio">
+        </div>
+
+        <div class="brand-name">
+            <strong>AMAMORI STUDIO</strong>
+            <span>PENGEMBANG GAME INDIE</span>
+        </div>
+
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="coming-soon.html">Segera Hadir</a>
+        <a href="games.html" class="active">Game</a>
+        <a href="team.html">Tim</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Buka menu">
+        <span></span>
+        <span></span>
+    </button>
+
+</header>
+
+
+<main>
+
+<!-- HERO HALAMAN -->
+<section class="page-hero">
+
+    <div class="page-hero-grid">
+
+        <div class="page-hero-content reveal">
+
+            <p class="eyebrow">KARYA KAMI</p>
+
+            <h1>Game yang telah<br><em>kami buat.</em></h1>
+
+            <p>
+                Before Tomorrow adalah puzzle naratif psikologis berbalut
+                visual 3D chibi yang menampar realita manusia modern. Ini
+                bukan sekadar game teka-teki, melainkan manifestasi visual
+                dari burnout, depresi fungsional, dan hilangnya warna hidup
+                akibat rutinitas yang robotik. Kamu adalah "robot bernyawa"
+                dalam siklus: bangun, kerja, tidur, ulang — sampai akhirnya
+                takdir membawamu tersesat ke sebuah lorong surreal penuh
+                pintu waktu. Setiap pintu adalah ruang isolasi emosimu
+                sendiri: ada taman bermain masa kecil yang kini sunyi, ada
+                labirin jam dinding dari ekspektasi yang mencekik, dan ada
+                cermin retak yang menyuarakan ketakutan terbesarmu. Dengan
+                memanipulasi objek dan menyelesaikan teka-teki lingkungan di
+                tiap ruangan, kamu tidak hanya mencari jalan keluar, tapi
+                juga memungut kembali kepingan jiwamu yang tercecer.
+            </p>
+
+        </div>
+
+        <div class="page-hero-visual reveal">
+            <img src="assets/images/game-ss-04.png" alt="Before Tomorrow">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INTRO PROYEK -->
+<section class="section project-intro">
+
+    <div class="project-number">01</div>
+
+    <div>
+
+        <p class="eyebrow">PROYEK YANG DIRILIS</p>
+
+        <h2>Telah Selesai<br><em>Before Tomorrow</em></h2>
+
+        <p class="large-text">
+            Bagaimana jika rutinitas robotikmu membawamu ke ruang isolasi
+            emosi? Before Tomorrow memadukan visual chibi yang menggemaskan
+            dengan narasi burnout yang pekat. Manipulasi objek, selesaikan
+            teka-teki surreal, dan temukan kembali warna hidupmu.
+        </p>
+
+        <a
+            href="https://reisyahnh.itch.io/before-tomorrow"
+            target="_blank"
+            class="btn btn-gold"
+        >
+            Mainkan di itch.io
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- TANGKAPAN LAYAR -->
+<section class="section">
+
+    <div class="section-heading reveal">
+        <div>
+            <p class="eyebrow">PENGEMBANGAN VISUAL</p>
+            <h2>Masuk ke dalam<br><em>dunianya.</em></h2>
+        </div>
+    </div>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item large reveal">
+            <img src="assets/images/game-ss-01.png" alt="Tangkapan layar Before Tomorrow 1">
+        </div>
+
+        <div class="gallery-item reveal">
+            <img src="assets/images/game-ss-02.png" alt="Tangkapan layar Before Tomorrow 2">
+        </div>
+
+        <div class="gallery-item reveal">
+            <img src="assets/images/game-ss-03 .png" alt="Tangkapan layar Before Tomorrow 3">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- KARAKTER 3D -->
+<section class="character-showcase">
+
+    <div class="character-text reveal">
+
+        <p class="eyebrow">DESAIN KARAKTER</p>
+
+        <h2>Kenalan dengan<br><em>tokoh utamanya.</em></h2>
+
+        <p>
+            Seorang pekerja muda yang jiwanya terkikis oleh depresi fungsional
+            dan rutinitas monoton yang mencekik. Di balik sifatnya yang lelah
+            dan pendiam, tersimpan keberanian tenang untuk menyusuri lorong
+            surreal masa lalunya demi memungut kembali kepingan emosi yang
+            hilang. Desain visualnya mengusung gaya 3D chibi yang mungil dan
+            rentan — tubuhnya yang semula kelabu pucat melambangkan kekosongan
+            hidup, namun perlahan menyala hangat dengan warna-warna kehidupan
+            setiap kali teka-teki kenangan berhasil ia pecahkan.
+        </p>
+
+    </div>
+
+    <div class="model-viewer-container reveal">
+        <model-viewer
+            src="assets/models/Chibi.glb"
+            camera-controls
+            auto-rotate
+            rotation-per-second="20deg"
+            shadow-intensity="1"
+            exposure="0.9"
+            environment-image="neutral"
+        ></model-viewer>
+    </div>
+
+</section>
+
+
+<!-- DETAIL GAME -->
+<section class="section details-section">
+
+    <div class="detail-box">
+        <span>GENRE</span>
+        <strong>Cerita / Puzzle</strong>
+    </div>
+
+    <div class="detail-box">
+        <span>PLATFORM</span>
+        <strong>PC</strong>
+    </div>
+
+    <div class="detail-box">
+        <span>ENGINE</span>
+        <strong>Unity</strong>
+    </div>
+
+    <div class="detail-box">
+        <span>STATUS</span>
+        <strong>Dirilis</strong>
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-brand">AMAMORI<span>STUDIO</span></div>
+
+    <p>Indie Game Developer</p>
+
+    <div class="footer-bottom">
+        <span>© 2026 AMAMORI STUDIO</span>
+    </div>
+
+</footer>
+
+</main>
+
+<script
+    type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+</script>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

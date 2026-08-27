@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Segera Hadir — Amamori Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        .pitch-block { padding: 120px 8vw; }
+        .pitch-block.alt { background: var(--color-surface, #0f0d0a); }
+
+        .block-heading { max-width: 720px; margin: 0 auto 64px; text-align: center; }
+        .block-heading .eyebrow { display:block; margin-bottom: 14px; }
+        .block-heading h2 { font-family: var(--font-display, 'Comic Neue', cursive); }
+        .block-heading p.lead {
+            font-family: var(--font-body, 'Comic Neue', cursive);
+            font-weight: 300;
+            opacity: .8;
+            margin-top: 18px;
+            line-height: 1.7;
+        }
+
+        /* GAMEPLAY LOOP */
+        .loop-wrap { max-width: 1100px; margin: 0 auto; }
+        .loop-steps {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0;
+            border-top: 1px solid var(--color-border, rgba(201,162,39,.25));
+            border-bottom: 1px solid var(--color-border, rgba(201,162,39,.25));
+        }
+        .loop-step {
+            padding: 32px 14px;
+            border-right: 1px solid var(--color-border, rgba(201,162,39,.25));
+            text-align: left;
+            position: relative;
+        }
+        .loop-step:last-child { border-right: none; }
+        .loop-step .loop-index {
+            font-family: var(--font-display, 'Comic Neue', cursive);
+            font-size: 2rem;
+            color: var(--color-gold, #c9a227);
+            display: block;
+            margin-bottom: 10px;
+        }
+        .loop-step h4 {
+            font-family: var(--font-body, 'Comic Neue', cursive);
+            font-size: .78rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .loop-step p { font-size: .88rem; line-height: 1.55; opacity: .75; }
+        .loop-note { text-align:center; margin-top: 28px; font-style: italic; opacity: .7; }
+
+        /* FEATURES GRID */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--color-border, rgba(201,162,39,.2));
+        }
+        .feature-card {
+            background: var(--color-bg, #0a0908);
+            padding: 40px 32px;
+        }
+        .feature-card .feature-icon { font-size: 1.8rem; display:block; margin-bottom: 18px; }
+        .feature-card h3 {
+            font-family: var(--font-display, 'Comic Neue', cursive);
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+        }
+        .feature-card p { font-size: .9rem; line-height: 1.6; opacity: .75; }
+
+        /* WHY THIS GAME / USP */
+        .usp-hook {
+            text-align: center;
+            font-family: var(--font-display, 'Comic Neue', cursive);
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-style: italic;
+            max-width: 760px;
+            margin: 0 auto 64px;
+            color: var(--color-gold, #c9a227);
+        }
+        .pillar-grid { display:grid; grid-template-columns: repeat(3,1fr); gap: 40px; max-width: 1100px; margin: 0 auto; }
+        .pillar-card { text-align:center; padding: 36px 24px; border: 1px solid var(--color-border, rgba(201,162,39,.25)); }
+        .pillar-card .pillar-label {
+            font-family: var(--font-body, 'Comic Neue', cursive);
+            font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+            color: var(--color-gold, #c9a227); display:block; margin-bottom: 14px;
+        }
+        .pillar-card p { font-size: .92rem; line-height: 1.65; opacity: .8; }
+
+        /* TARGET AUDIENCE */
+        .audience-columns { display:grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1000px; margin: 0 auto 56px; }
+        .audience-columns h4 {
+            font-family: var(--font-body, 'Comic Neue', cursive);
+            font-size: .8rem; letter-spacing: .1em; text-transform: uppercase;
+            margin-bottom: 20px; opacity: .85;
+        }
+        .audience-columns ul { list-style: none; padding: 0; margin: 0; }
+        .audience-columns li {
+            padding: 12px 0; border-bottom: 1px solid var(--color-border, rgba(201,162,39,.18));
+            font-size: .95rem;
+        }
+        .player-promise {
+            max-width: 700px; margin: 0 auto; text-align:center;
+            font-family: var(--font-display, 'Comic Neue', cursive);
+            font-size: 1.4rem; font-style: italic; line-height: 1.6; opacity: .9;
+        }
+
+        /* PLATFORM */
+        .platform-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 900px; margin: 0 auto 48px; }
+        .platform-card { padding: 44px 32px; border: 1px solid var(--color-border, rgba(201,162,39,.25)); text-align:center; }
+        .platform-card .platform-icon { font-size: 2.2rem; display:block; margin-bottom: 16px; }
+        .platform-card h3 { font-family: var(--font-display, 'Comic Neue', cursive); font-size: 1.5rem; margin-bottom: 8px; }
+        .platform-card span.store { display:block; color: var(--color-gold, #c9a227); font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; }
+        .platform-card p { font-size: .88rem; opacity: .75; line-height: 1.6; }
+        .platform-strategy { text-align:center; max-width: 640px; margin: 0 auto; font-size: .92rem; opacity: .75; line-height: 1.7; }
+
+        /* BUSINESS MODEL */
+        .business-grid { display:grid; grid-template-columns: 1.1fr .9fr; gap: 56px; max-width: 1100px; margin: 0 auto; align-items: start; }
+        .business-model-title { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--color-gold, #c9a227); margin-bottom: 10px; }
+        .revenue-flow { display:flex; flex-wrap:wrap; align-items:center; gap: 10px; font-size: .85rem; margin-top: 18px; opacity: .85; }
+        .revenue-flow span.node { padding: 8px 14px; border: 1px solid var(--color-border, rgba(201,162,39,.3)); }
+        .revenue-flow span.arrow { color: var(--color-gold, #c9a227); }
+        .future-content ul { list-style: none; padding:0; margin: 14px 0 0; }
+        .future-content li { padding: 9px 0; border-bottom: 1px solid var(--color-border, rgba(201,162,39,.18)); font-size: .9rem; opacity: .85; }
+        .future-content li::before { content: "＋ "; color: var(--color-gold, #c9a227); }
+
+        /* DEVELOPMENT — progress note */
+        .progress-context {
+            max-width: 760px; margin: 20px auto 0; text-align:center;
+            font-size: .85rem; opacity: .65; line-height: 1.6; font-style: italic;
+        }
+
+        /* JENAKA'S DREAMS / WISHLIST */
+        .wishlist-grid {
+            display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+            max-width: 1100px; margin: 0 auto;
+        }
+        .wishlist-card {
+            padding: 30px 26px; border: 1px solid var(--color-border, rgba(201,162,39,.25));
+        }
+        .wishlist-card .wishlist-icon { font-size: 1.5rem; display:block; margin-bottom: 12px; }
+        .wishlist-card h4 { font-family: var(--font-display, 'Comic Neue', cursive); font-size: 1.2rem; margin-bottom: 8px; }
+        .wishlist-card p, .wishlist-card ul { font-size: .86rem; opacity: .78; line-height: 1.55; }
+        .wishlist-card ul { list-style:none; padding:0; margin:0; }
+        .wishlist-card li { padding: 3px 0; }
+        .wishlist-progress { margin-top: 12px; }
+        .wishlist-progress .bar { height: 4px; background: var(--color-border, rgba(201,162,39,.2)); border-radius: 2px; overflow:hidden; }
+        .wishlist-progress .fill { height:100%; width: 42%; background: var(--color-gold, #c9a227); }
+        .wishlist-progress .amount { font-size: .78rem; margin-top: 6px; opacity: .7; }
+        .wishlist-note { text-align:center; max-width: 620px; margin: 44px auto 0; font-style: italic; opacity: .7; font-size: .92rem; }
+
+        /* FUNDING */
+        .funding-goal { text-align:center; margin-bottom: 56px; }
+        .funding-goal .goal-label { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; opacity: .7; display:block; margin-bottom: 10px; }
+        .funding-goal .goal-amount { font-family: var(--font-display, 'Comic Neue', cursive); font-size: clamp(2.2rem, 5vw, 3.6rem); color: var(--color-gold, #c9a227); }
+        .funding-grid {
+            display:grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+            background: var(--color-border, rgba(201,162,39,.2)); margin-bottom: 72px;
+        }
+        .funding-card { background: var(--color-bg, #0a0908); padding: 32px 26px; }
+        .funding-card .funding-icon { font-size: 1.5rem; display:block; margin-bottom: 14px; }
+        .funding-card h4 { font-family: var(--font-display, 'Comic Neue', cursive); font-size: 1.15rem; margin-bottom: 8px; }
+        .funding-card p { font-size: .85rem; opacity: .75; line-height: 1.55; }
+
+        .roadmap { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap: 14px; max-width: 1000px; margin: 0 auto; }
+        .roadmap .stage {
+            padding: 14px 20px; border: 1px solid var(--color-border, rgba(201,162,39,.3));
+            font-size: .82rem; letter-spacing: .04em; white-space: nowrap;
+        }
+        .roadmap .stage.current { border-color: var(--color-gold, #c9a227); color: var(--color-gold, #c9a227); }
+        .roadmap .sep { color: var(--color-gold, #c9a227); opacity: .6; }
+
+        /* CLOSING POEM */
+        .closing-poem { padding: 140px 8vw; text-align:center; }
+        .closing-poem .poem-lines { max-width: 640px; margin: 0 auto 40px; }
+        .closing-poem .poem-lines p {
+            font-family: var(--font-display, 'Comic Neue', cursive);
+            font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+            line-height: 2;
+            opacity: .85;
+        }
+        .closing-poem .poem-center {
+            font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+            font-style: italic;
+            margin: 32px 0;
+            color: var(--color-gold, #c9a227);
+        }
+        .closing-poem .poem-tag {
+            font-family: var(--font-body, 'Comic Neue', cursive);
+            font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; opacity: .6;
+        }
+
+        @media (max-width: 900px) {
+            .loop-steps { grid-template-columns: repeat(2, 1fr); }
+            .loop-step { border-right: 1px solid var(--color-border, rgba(201,162,39,.25)); }
+            .loop-step:nth-child(2n) { border-right: none; }
+            .features-grid, .pillar-grid, .funding-grid { grid-template-columns: 1fr; }
+            .audience-columns, .platform-grid, .business-grid { grid-template-columns: 1fr; gap: 40px; }
+            .wishlist-grid { grid-template-columns: 1fr; }
+            .pitch-block { padding: 80px 6vw; }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <a href="index.html" class="brand">
+
+        <div class="brand-logo">
+            <img src="assets/images/game-logo.png" alt="Logo Amamori Studio">
+        </div>
+
+        <div class="brand-name">
+            <strong>AMAMORI STUDIO</strong>
+            <span>PENGEMBANG GAME INDIE</span>
+        </div>
+
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="coming-soon.html" class="active">Segera Hadir</a>
+        <a href="games.html">Game</a>
+        <a href="team.html">Tim</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Buka menu">
+        <span></span>
+        <span></span>
+    </button>
+
+</header>
+
+
+<main>
+
+<!-- HERO SINEMATIK -->
+<section
+    class="coming-hero"
+    style="background-image: url('assets/images/coming-game-cover.jpg');"
+>
+
+    <div class="hero-overlay"></div>
+
+    <div class="coming-hero-content reveal">
+
+        <p class="eyebrow">SEDANG DALAM PENGEMBANGAN</p>
+
+        <h1>SEPIRING NASI<br><em>HARI INI</em></h1>
+
+        <p>
+            Sebuah perjalanan penuh cerita, menyusuri kehidupan yang menunggu
+            untuk dikenang.
+        </p>
+
+        <a href="#trailer" class="btn btn-gold">Tonton Trailer</a>
+
+    </div>
+
+</section>
+
+
+<!-- PITCH PROYEK -->
+<section class="section pitch-section">
+
+    <div class="section-label">
+        <span>01</span>
+        PROYEK INI
+    </div>
+
+    <div class="pitch-grid">
+
+        <div class="pitch-content reveal">
+
+            <p class="eyebrow">SEBUAH CERITA TENTANG...</p>
+
+            <h2>Setiap piring nasi<br>menyimpan sebuah perjuangan.</h2>
+
+            <p class="large-text">
+                Sepiring Nasi Hari Ini mengajak pemain menyusuri kehidupan
+                orang-orang biasa di Indonesia — mereka yang sedang mencari
+                pekerjaan, bertahan di lingkungan kerja yang menekan,
+                menentukan arah hidup setelah lulus sekolah, hingga mengejar
+                pendidikan di tengah keterbatasan ekonomi. Ini adalah cerita
+                tentang perjuangan kecil sehari-hari yang seringkali tak
+                terlihat, namun begitu berarti.
+            </p>
+
+        </div>
+
+        <div class="pitch-image reveal">
+            <img src="assets/images/coming-game.png" alt="Visual proyek Sepiring Nasi Hari Ini">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TRAILER -->
+<section class="video-section" id="trailer">
+
+    <div class="video-header reveal">
+        <p class="eyebrow">TAYANGAN PERTAMA</p>
+        <h2>Tonton <em>trailernya.</em></h2>
+    </div>
+
+    <div class="video-wrapper reveal">
+        <video controls poster="assets/images/coming-game.png">
+            <source src="assets/video/trailer.mp4" type="video/mp4">
+            Peramban Anda tidak mendukung pemutaran video.
+        </video>
+    </div>
+
+</section>
+
+
+<!-- GAMEPLAY & CORE LOOP -->
+<section class="pitch-block">
+
+    <div class="section-label reveal">
+        <span>02</span>
+        GAMEPLAY
+    </div>
+
+    <div class="block-heading reveal">
+        <p class="eyebrow">DI BALIK SEBUAH WARUNG</p>
+        <h2>Ada kehidupan yang<br><em>terus berjalan.</em></h2>
+        <p class="lead">
+            Pemain berperan sebagai Jenaka, seorang fresh graduate yang
+            membuka warung makan untuk membantu ekonomi keluarga sekaligus
+            mengumpulkan biaya kuliah. Di sela kesibukan menjalankan warung,
+            pemain akan bertemu berbagai orang yang membawa cerita dan
+            persoalan hidup mereka masing-masing.
+        </p>
+    </div>
+
+    <div class="loop-wrap reveal">
+        <div class="loop-steps">
+
+            <div class="loop-step">
+                <span class="loop-index">01</span>
+                <h4>Prepare</h4>
+                <p>Menata warung dan menyiapkan bahan makanan.</p>
+            </div>
+
+            <div class="loop-step">
+                <span class="loop-index">02</span>
+                <h4>Cook</h4>
+                <p>Memasak makanan sesuai pesanan pelanggan.</p>
+            </div>
+
+            <div class="loop-step">
+                <span class="loop-index">03</span>
+                <h4>Serve</h4>
+                <p>Melayani pelanggan dan menyelesaikan pesanan.</p>
+            </div>
+
+            <div class="loop-step">
+                <span class="loop-index">04</span>
+                <h4>Connect</h4>
+                <p>Berinteraksi dengan pelanggan dan mengikuti cerita mereka.</p>
+            </div>
+
+            <div class="loop-step">
+                <span class="loop-index">05</span>
+                <h4>Manage</h4>
+                <p>Membeli bahan, refill stok, dan mengelola kebutuhan warung.</p>
+            </div>
+
+            <div class="loop-step">
+                <span class="loop-index">06</span>
+                <h4>Grow</h4>
+                <p>Mengembangkan warung dan mengejar impian Jenaka.</p>
+            </div>
+
+        </div>
+
+        <p class="loop-note">Satu siklus, diulang setiap hari — namun setiap hari membawa cerita yang berbeda.</p>
+    </div>
+
+</section>
+
+
+<!-- FITUR UTAMA -->
+<section class="pitch-block alt">
+
+    <div class="section-label reveal">
+        <span>03</span>
+        FITUR UTAMA
+    </div>
+
+    <div class="block-heading reveal">
+        <p class="eyebrow">GAME FEATURES</p>
+        <h2>Semua yang bisa<br><em>pemain lakukan.</em></h2>
+    </div>
+
+    <div class="features-grid reveal">
+
+        <div class="feature-card">
+            <span class="feature-icon">🍳</span>
+            <h3>Cook &amp; Serve</h3>
+            <p>Masak berbagai menu, siapkan pesanan makan di tempat maupun take-away, lalu layani pelanggan.</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="feature-icon">📦</span>
+            <h3>Warung Management</h3>
+            <p>Beli bahan makanan, pantau persediaan, refill bahan yang habis, dan catat pembukuan warung.</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="feature-icon">🪑</span>
+            <h3>Warung Upgrades</h3>
+            <p>Gunakan hasil usaha untuk menambah meja, kursi, dekorasi, dan berbagai peningkatan lainnya.</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="feature-icon">💬</span>
+            <h3>Story &amp; Dialogue</h3>
+            <p>Berinteraksi dengan pelanggan dan mengikuti cerita personal mereka yang berkembang hari demi hari.</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="feature-icon">🌏</span>
+            <h3>Explore</h3>
+            <p>Jelajahi lingkungan sekitar warung dan temukan percakapan serta kejadian di luar aktivitas warung.</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="feature-icon">🎥</span>
+            <h3>TPS &amp; FPS Experience</h3>
+            <p>Berpindah antara sudut pandang Third-Person dan First-Person untuk melihat dunia dari sisi berbeda.</p>
+        </div>
+
+    </div>
+
+    <p class="loop-note" style="margin-top:48px;">
+        🎯 <strong>Character Progression</strong> — Bantu Jenaka mencapai berbagai impiannya, mulai dari
+        mengumpulkan biaya kuliah hingga membantu keluarganya dan mengembangkan warung.
+    </p>
+
+</section>
+
+
+<!-- TENTANG DUNIA -->
+<section class="section story-section">
+
+    <div class="story-image reveal">
+        <img src="assets/images/game-SNHII.png" alt="Suasana dunia Sepiring Nasi Hari Ini">
+    </div>
+
+    <div class="story-content reveal">
+
+        <p class="eyebrow">DUNIA GAME</p>
+
+        <h2>Dunia yang dibangun<br>dari <em>kenyataan.</em></h2>
+
+        <p>
+            Sepiring Nasi Hari Ini berlatar di keseharian kota-kota di
+            Indonesia — warung makan sederhana, ruang kerja yang penuh
+            tekanan, kamar kos kecil, hingga panti asuhan yang menyimpan
+            banyak cerita. Tidak ada dunia fantasi di sini; yang ada hanyalah
+            potret kehidupan nyata yang dekat dengan siapa saja.
+        </p>
+
+        <p>
+            Suasana yang dibangun bersifat hangat namun jujur, menampilkan
+            perjuangan sehari-hari tanpa berlebihan, agar pemain benar-benar
+            merasa terhubung dengan setiap tokohnya.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CERITA -->
+<section class="section story-text-section">
+
+    <p class="eyebrow reveal">CERITA</p>
+
+    <h2 class="reveal">Setiap perjalanan<br>dimulai dari sebuah <em>pertanyaan.</em></h2>
+
+    <div class="story-columns reveal">
+
+        <p>
+            Setiap tokoh dalam Sepiring Nasi Hari Ini punya satu pertanyaan
+            yang menuntun perjalanan hidupnya, apa yang harus dikorbankan
+            demi bertahan, dan apa yang masih layak diperjuangkan?
+        </p>
+
+        <p>
+            Tanpa membocorkan terlalu banyak, cerita ini mengangkat tema
+            tentang kerja keras, harapan, dan arti dari sepiring nasi sebagai
+            simbol perjuangan hidup sehari-hari.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- KARAKTER -->
+<section class="section characters-section">
+
+    <div class="section-heading reveal">
+        <div>
+            <p class="eyebrow">KARAKTER</p>
+            <h2>Orang-orang di balik<br><em>cerita.</em></h2>
+        </div>
+    </div>
+
+    <div class="character-grid">
+
+        <!-- KARAKTER 01 -->
+        <article class="character-card reveal">
+            <div class="character-image">
+                <img src="assets/images/ch-01.png" alt="Jenaka">
+            </div>
+            <div class="character-info">
+                <span>01</span>
+                <h3>Jenaka</h3>
+                <p>Tokoh Utama</p>
+                <p class="character-description">
+                    Fresh graduate yang memilih membuka warung makan untuk
+                    membantu ekonomi keluarga dan mengumpulkan uang untuk
+                    kuliah.
+                </p>
+            </div>
+        </article>
+
+        <!-- KARAKTER 02 -->
+        <article class="character-card reveal">
+            <div class="character-image">
+                <img src="assets/images/ch-02.png" alt="Shanira">
+            </div>
+            <div class="character-info">
+                <span>02</span>
+                <h3>Shanira</h3>
+                <p>Tokoh Pendukung</p>
+                <p class="character-description">
+                    "Ketika pekerjaan yang diperjuangkan justru perlahan
+                    menghabiskan dirinya." Pekerja kantoran yang terjebak
+                    dalam tuntutan dan tekanan dunia kerja.
+                </p>
+            </div>
+        </article>
+
+        <!-- KARAKTER 03 -->
+        <article class="character-card reveal">
+            <div class="character-image">
+                <img src="assets/images/ch-03.png" alt="Azira">
+            </div>
+            <div class="character-info">
+                <span>03</span>
+                <h3>Azira</h3>
+                <p>Tokoh Pendukung</p>
+                <p class="character-description">
+                    "Tumbuh dari sebuah janji yang tak pernah ditepati."
+                    Anak panti yang ditinggalkan ibunya dan masih mencari
+                    jawaban tentang keluarganya.
+                </p>
+            </div>
+        </article>
+
+        <!-- KARAKTER 04 -->
+        <article class="character-card reveal">
+            <div class="character-image">
+                <img src="assets/images/ch-04.png" alt="Calva">
+            </div>
+            <div class="character-info">
+                <span>04</span>
+                <h3>Calva</h3>
+                <p>Tokoh Pendukung</p>
+                <p class="character-description">
+                    "Lulus sekolah, lalu harus ke mana?" Menghadapi
+                    ketidakpastian masa depan setelah kelulusan.
+                </p>
+            </div>
+        </article>
+
+        <!-- KARAKTER 05 -->
+        <article class="character-card reveal">
+            <div class="character-image">
+                <img src="assets/images/ch-05.png" alt="Ghea">
+            </div>
+            <div class="character-info">
+                <span>05</span>
+                <h3>Ghea</h3>
+                <p>Tokoh Pendukung</p>
+                <p class="character-description">
+                    "Mimpi besar dimulai dari peran kecil." Pendatang baru di
+                    dunia entertainment yang berjuang mendapatkan kesempatan.
+                </p>
+            </div>
+        </article>
+
+        <!-- KARAKTER 06 -->
+        <article class="character-card reveal">
+            <div class="character-image">
+                <img src="assets/images/ch-06.png" alt="Geovani">
+            </div>
+            <div class="character-info">
+                <span>06</span>
+                <h3>Geovani</h3>
+                <p>Tokoh Pendukung</p>
+                <p class="character-description">
+                    "Tidak semua cinta datang tanpa perbedaan." Menghadapi
+                    dilema cinta dan perbedaan keyakinan.
+                </p>
+            </div>
+        </article>
+
+        <!-- KARAKTER 07 -->
+        <article class="character-card reveal">
+            <div class="character-image">
+                <img src="assets/images/ch-07.png" alt="Aji">
+            </div>
+            <div class="character-info">
+                <span>07</span>
+                <h3>Aji</h3>
+                <p>Tokoh Pendukung</p>
+                <p class="character-description">
+                    "Ingin mandiri, tetapi pekerjaan tak kunjung datang."
+                    Pemuda yang berjuang untuk mendapatkan kesempatan
+                    bekerja.
+                </p>
+            </div>
+        </article>
+
+        <!-- KARAKTER 08 -->
+        <article class="character-card reveal">
+            <div class="character-image">
+                <img src="assets/images/ch-08.png" alt="Pak Dika">
+            </div>
+            <div class="character-info">
+                <span>08</span>
+                <h3>Pak Dika</h3>
+                <p>Tokoh Pendukung</p>
+                <p class="character-description">
+                    "Lelah boleh, berhenti tidak." Seorang ayah dan
+                    pengemudi ojol yang bekerja keras demi keluarganya.
+                </p>
+            </div>
+        </article>
+
+        <!-- KARAKTER 09 -->
+        <article class="character-card reveal">
+            <div class="character-image">
+                <img src="assets/images/ch-09.png" alt="Bu Mayra">
+            </div>
+            <div class="character-info">
+                <span>09</span>
+                <h3>Bu Mayra</h3>
+                <p>Tokoh Pendukung</p>
+                <p class="character-description">
+                    "Di balik rumah yang terurus, ada ibu yang juga ingin
+                    dimengerti." Seorang ibu rumah tangga yang menghadapi
+                    persoalan keluarga dan perjuangan yang sering tak
+                    terlihat.
+                </p>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- KARAKTER 3D -->
+<section class="character-showcase">
+
+    <div class="character-text reveal">
+        <p class="eyebrow">KARAKTER 3D</p>
+        <h2>Lihat mereka<br><em>lebih dekat.</em></h2>
+        <p>Putar dan jelajahi model karakter langsung di website ini.</p>
+    </div>
+
+    <div class="model-viewer-container reveal">
+        <model-viewer
+            src="assets/models/ch-01.glb"
+            camera-controls
+            auto-rotate
+            rotation-per-second="15deg"
+            shadow-intensity="1"
+            exposure="1"
+            environment-image="neutral"
+        ></model-viewer>
+    </div>
+
+</section>
+
+
+<!-- KENAPA GAME INI / USP -->
+<section class="pitch-block">
+
+    <div class="section-label reveal">
+        <span>08</span>
+        KENAPA HARUS MAIN GAME INI?
+    </div>
+
+    <div class="block-heading reveal">
+        <p class="eyebrow">UNIQUE SELLING POINT</p>
+        <h2>Warung bukan sekadar<br>tempat <em>mencari uang.</em></h2>
+        <p class="lead">
+            Warung menjadi tempat bertemunya berbagai kehidupan. Setiap
+            pelanggan membawa masalah, harapan, dan cerita mereka sendiri.
+            Di tengah kesibukan memasak dan melayani pesanan, pemain
+            perlahan mengenal kehidupan orang-orang di balik setiap meja.
+        </p>
+    </div>
+
+    <div class="pillar-grid reveal">
+
+        <div class="pillar-card">
+            <span class="pillar-label">Simulation</span>
+            <p>Mengelola warung, memasak, melayani pelanggan, dan mengatur keuangan.</p>
+        </div>
+
+        <div class="pillar-card">
+            <span class="pillar-label">Story</span>
+            <p>Mengikuti kehidupan berbagai karakter dan melihat bagaimana cerita mereka berkembang dari hari ke hari.</p>
+        </div>
+
+        <div class="pillar-card">
+            <span class="pillar-label">Indonesian Life</span>
+            <p>Mengangkat kehidupan, permasalahan, lingkungan, dan karakter yang dekat dengan keseharian masyarakat Indonesia.</p>
+        </div>
+
+    </div>
+
+    <p class="usp-hook" style="margin-top:64px;">
+        "Setiap pelanggan punya cerita.<br>Setiap cerita dimulai dari sebuah hidangan."
+    </p>
+
+</section>
+
+
+<!-- TARGET PEMAIN -->
+<section class="pitch-block alt">
+
+    <div class="section-label reveal">
+        <span>09</span>
+        TARGET PEMAIN
+    </div>
+
+    <div class="block-heading reveal">
+        <p class="eyebrow">TARGET AUDIENCE</p>
+        <h2>Untuk siapa cerita<br>ini <em>ditujukan.</em></h2>
+    </div>
+
+    <div class="audience-columns reveal">
+
+        <div>
+            <h4>Usia 16–30 tahun, menyukai:</h4>
+            <ul>
+                <li>Story-driven games</li>
+                <li>Life simulation</li>
+                <li>Cooking &amp; management games</li>
+                <li>Cozy games</li>
+                <li>Character-driven narratives</li>
+                <li>Cerita kehidupan sehari-hari</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Secondary audience, tertarik pada:</h4>
+            <ul>
+                <li>Indonesian culture</li>
+                <li>Local games</li>
+                <li>Slice-of-life stories</li>
+                <li>Emotional storytelling</li>
+                <li>Simulation games</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <p class="player-promise reveal">
+        "Sebuah dunia yang terasa familiar, tempat pemain dapat menemukan
+        sedikit bagian dari dirinya sendiri maupun orang-orang di
+        sekitarnya."
+    </p>
+
+</section>
+
+
+<!-- PLATFORM -->
+<section class="pitch-block">
+
+    <div class="section-label reveal">
+        <span>10</span>
+        PLATFORM
+    </div>
+
+    <div class="block-heading reveal">
+        <p class="eyebrow">AVAILABLE ON</p>
+        <h2>Menjangkau pemain<br>di <em>mana saja.</em></h2>
+    </div>
+
+    <div class="platform-grid reveal">
+
+        <div class="platform-card">
+            <span class="platform-icon">🖥️</span>
+            <h3>PC</h3>
+            <span class="store">Steam</span>
+            <p>Platform utama untuk pemain PC yang mencari pengalaman simulation dan story-driven game.</p>
+        </div>
+
+        <div class="platform-card">
+            <span class="platform-icon">📱</span>
+            <h3>Mobile</h3>
+            <span class="store">Google Play Store</span>
+            <p>Membawa pengalaman Sepiring Nasi Hari Ini kepada pemain mobile dengan gameplay yang lebih fleksibel.</p>
+        </div>
+
+    </div>
+
+    <p class="platform-strategy reveal">
+        <strong>Strategi PC + Mobile</strong> — game dikembangkan untuk
+        menjangkau dua kelompok pemain sekaligus, dengan penyesuaian kontrol
+        dan pengalaman pengguna sesuai karakteristik masing-masing platform.
+    </p>
+
+</section>
+
+
+<!-- MODEL BISNIS -->
+<section class="pitch-block alt">
+
+    <div class="section-label reveal">
+        <span>11</span>
+        MODEL BISNIS
+    </div>
+
+    <div class="business-grid reveal">
+
+        <div>
+            <p class="business-model-title">Premium Game Sales</p>
+            <h2 style="font-family:var(--font-display,'Comic Neue',cursive); margin-bottom:16px;">
+                Pemain membeli game untuk<br><em>pengalaman penuh.</em>
+            </h2>
+            <p style="opacity:.8; line-height:1.7; font-size:.95rem;">
+                Untuk saat ini, fokus utama adalah menghasilkan game utama
+                yang lengkap dan berkualitas, kemudian membuka peluang
+                pengembangan konten tambahan setelah game memiliki basis
+                pemain.
+            </p>
+
+            <div class="revenue-flow">
+                <span class="node">Game Sales</span>
+                <span class="arrow">→</span>
+                <span class="node">Digital Distribution</span>
+                <span class="arrow">→</span>
+                <span class="node">Future Content</span>
+            </div>
+        </div>
+
+        <div class="future-content">
+            <p class="business-model-title">Potential Future Content</p>
+            <ul>
+                <li>Additional story chapters</li>
+                <li>New characters</li>
+                <li>New locations</li>
+                <li>Additional menu / recipes</li>
+                <li>Expansion content</li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PENGEMBANGAN -->
+<section class="section development-section">
+
+    <div class="section-heading reveal">
+        <div>
+            <p class="eyebrow">PENGEMBANGAN</p>
+            <h2>Sudah sampai mana<br><em>prosesnya?</em></h2>
+        </div>
+    </div>
+
+    <div class="progress-container reveal">
+        <div class="progress-header">
+            <span>PROGRES PENGEMBANGAN</span>
+            <strong>70%</strong>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width:70%"></div>
+        </div>
+    </div>
+
+    <div class="development-grid">
+
+        <div class="dev-item completed reveal">
+            <span>01</span>
+            <h3>Konsep</h3>
+            <p>Selesai</p>
+        </div>
+
+        <div class="dev-item completed reveal">
+            <span>02</span>
+            <h3>Pra-produksi</h3>
+            <p>Selesai</p>
+        </div>
+
+        <div class="dev-item active reveal">
+            <span>03</span>
+            <h3>Produksi</h3>
+            <p>Sedang Berjalan</p>
+        </div>
+
+        <div class="dev-item reveal">
+            <span>04</span>
+            <h3>Polishing</h3>
+            <p>Akan Datang</p>
+        </div>
+
+        <div class="dev-item reveal">
+            <span>05</span>
+            <h3>Rilis</h3>
+            <p>Akan Datang</p>
+        </div>
+
+    </div>
+
+    <p class="progress-context reveal">
+        Konsep dan pra-produksi — identitas game, perencanaan gameplay,
+        karakter, cerita, dan dunia — telah rampung sepenuhnya. Saat ini tim
+        sedang membangun sistem warung, karakter, environment, dialog, dan
+        story. Tahap berikutnya adalah polishing (optimization, balancing,
+        audio, bug fixing, user testing) sebelum menuju demo/full release
+        untuk PC dan mobile.
+    </p>
+
+</section>
+
+<!-- GALERI -->
+<section class="section">
+
+    <div class="section-heading reveal">
+        <div>
+            <p class="eyebrow">GALERI PENGEMBANGAN</p>
+            <h2>Serpihan dari<br><em>dunia ini.</em></h2>
+        </div>
+    </div>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item large reveal">
+            <img src="assets/images/game-snhi-01.png" alt="Galeri pengembangan 1">
+        </div>
+
+        <div class="gallery-item reveal">
+            <img src="assets/images/game-snhi-02.png" alt="Galeri pengembangan 2">
+        </div>
+
+        <div class="gallery-item reveal">
+            <img src="assets/images/game-snhi-03.png" alt="Galeri pengembangan 3">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FUNDING / INVESTMENT -->
+<section class="pitch-block alt">
+
+    <div class="section-label reveal">
+        <span>14</span>
+        FUNDING / INVESTMENT
+    </div>
+
+    <div class="block-heading reveal">
+        <p class="eyebrow">HELP US BRING THIS STORY TO LIFE</p>
+        <h2>Sepiring Nasi Hari Ini<br>sedang dalam <em>pengembangan.</em></h2>
+        <p class="lead">
+            Kami mencari mitra pendanaan untuk membantu mengubah development
+            build yang ada saat ini menjadi game yang lengkap dan matang,
+            siap dirilis untuk PC dan mobile.
+        </p>
+    </div>
+
+    <div class="funding-goal reveal">
+        <span class="goal-label">Funding Goal</span>
+        <span class="goal-amount">Rp [NOMINAL]</span>
+    </div>
+
+    <div class="funding-grid reveal">
+
+        <div class="funding-card">
+            <span class="funding-icon">⚙️</span>
+            <h4>Development</h4>
+            <p>Programming, gameplay systems, optimization.</p>
+        </div>
+
+        <div class="funding-card">
+            <span class="funding-icon">🎨</span>
+            <h4>Art &amp; Animation</h4>
+            <p>Character, environment, animation, dan aset tambahan.</p>
+        </div>
+
+        <div class="funding-card">
+            <span class="funding-icon">🎧</span>
+            <h4>Audio</h4>
+            <p>Music, sound effects, dan produksi audio lainnya.</p>
+        </div>
+
+        <div class="funding-card">
+            <span class="funding-icon">📣</span>
+            <h4>Marketing</h4>
+            <p>Trailer, materi promosi, media sosial, dan kampanye peluncuran.</p>
+        </div>
+
+        <div class="funding-card">
+            <span class="funding-icon">🧪</span>
+            <h4>QA &amp; Testing</h4>
+            <p>Playtesting, balancing, bug fixing, dan optimization.</p>
+        </div>
+
+        <div class="funding-card">
+            <span class="funding-icon">🗂️</span>
+            <h4>Operational</h4>
+            <p>Software, tools, biaya platform, dan kebutuhan produksi lainnya.</p>
+        </div>
+
+    </div>
+
+    <div class="roadmap reveal">
+        <span class="stage">Funding</span>
+        <span class="sep">→</span>
+        <span class="stage current">Complete Production</span>
+        <span class="sep">→</span>
+        <span class="stage">Polishing &amp; Testing</span>
+        <span class="sep">→</span>
+        <span class="stage">Demo / Beta</span>
+        <span class="sep">→</span>
+        <span class="stage">PC + Mobile Release</span>
+    </div>
+
+</section>
+
+
+<!-- CLOSING POEM -->
+<section class="closing-poem">
+
+    <p class="eyebrow reveal">EVERY PLATE HAS A STORY</p>
+
+    <div class="poem-lines reveal">
+        <p>
+            Setiap hari, orang-orang datang ke warung dengan tujuan yang berbeda.<br>
+            Ada yang sedang mencari pekerjaan.<br>
+            Ada yang mengejar pendidikan.<br>
+            Ada yang mempertahankan keluarga.<br>
+            Ada yang mengejar mimpi.<br>
+            Ada yang hanya berusaha melewati hari.
+        </p>
+    </div>
+
+    <p class="poem-center reveal">Dan di tengah semuanya,<br>ada sepiring nasi.</p>
+
+    <p class="poem-tag reveal">Different lives. Different struggles. One reason to keep going.</p>
+
+</section>
+
+
+<!-- CTA AKHIR -->
+<section class="final-cta">
+
+    <div class="reveal">
+
+        <p class="eyebrow">TETAP BERSAMA KAMI</p>
+
+        <h2>Perjalanan ini<br>baru saja <em>dimulai.</em></h2>
+
+        <p>
+            Ikuti proyek ini dan jadilah bagian saat dunia ini membuka
+            pintunya.
+        </p>
+
+        <a href="#" class="btn btn-gold">Ikuti Perkembangannya</a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-brand">AMAMORI<span>STUDIO</span></div>
+
+    <p>Indie Game Developer</p>
+
+    <div class="footer-bottom">
+        <span>© 2026 AMAMORI STUDIO</span>
+    </div>
+
+</footer>
+
+</main>
+
+
+<script
+    type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+</script>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
